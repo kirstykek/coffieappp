@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf ="CId" (ionChange)="getName($event)">{{order.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-item>
+    <ion-label>R{{order?.price}}</ion-label>
+  </ion-item>
+
+        <ion-list>
+            <ion-radio-group  (ionChange)="getSugar($event)">
+              <ion-list-header>
+                <ion-label>Sugar</ion-label>
+              </ion-list-header>
+          
+              <ion-item>
+                <ion-label>1</ion-label>
+                <ion-radio slot="start" value=1 checked></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>2</ion-label>
+                <ion-radio slot="start" value=2></ion-radio>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>3</ion-label>
+                <ion-radio slot="start" value=3></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+          
+
+
+          <ion-list>
+              <ion-radio-group (ionChange)="getMilk($event)">
+                <ion-list-header>
+                  <ion-label>Milk</ion-label>
+                </ion-list-header>
+            
+               
+                  <ion-label>Yes</ion-label>
+                  <ion-radio slot="start" value="yes" checked></ion-radio>
+                
+            
+                
+                  <ion-label>No</ion-label>
+                  <ion-radio slot="start" value="no"></ion-radio>
+              
+              </ion-radio-group>
+          </ion-list>
+
+          <ion-radio-group>
+            <ion-item>
+                <ion-label>Quantity</ion-label>
+                <ion-select (ionChange)="getQuantity($event)">
+                  <ion-select-option value=1 selected>1</ion-select-option>
+                  <ion-select-option value=2>2</ion-select-option>
+                  <ion-select-option value=3>3</ion-select-option>
+                  <ion-select-option value=4>4</ion-select-option>
+                  <ion-select-option value=5>5</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-radio-group>
+
+            <ion-item>
+
+            <ion-button color="dark" (click)="Calculate()">Total</ion-button>
+            <ion-button color="dark" [routerLink]="['/orders']" (click)="placeorder();Calculate()">Order</ion-button>
+<ion-item>TotalPrice R{{totalprice}}</ion-item>
+</ion-item>
+   
+</ion-content>
+  
+
+

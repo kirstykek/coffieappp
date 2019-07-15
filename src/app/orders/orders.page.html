@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<p *ngFor="let placeorder of coffee">
+    Name:{{placeorder.Namez}}<br>
+    Sugar:{{placeorder.shugarz}}<br>
+    Milk:{{placeorder.milkz}}<br>
+    QTY:{{placeorder.quantitiez}}<br>
+    R{{placeorder.pricez}}.00<br>
+</p>
+    <ion-button color="dark" [routerLink]="['/home']">Home</ion-button>
+</ion-content>

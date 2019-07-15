@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title text-align="center">neworder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-title *ngIf ="CId">{{category.name}}</ion-title> -->
+<h3><b>Categories</b></h3>
+<ion-content>
+<p *ngFor="let categoryy of category">
+
+  <img height="180" width="180" src="../assets/coffie/{{categoryy.pictures}}">
+  {{categoryy.name}}
+  R{{categoryy.price}}
+  <ion-button color="dark" [routerLink]="['/placeorder',categoryy.CId]">Order</ion-button>
+</p>
+</ion-content>
